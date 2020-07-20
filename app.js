@@ -1,7 +1,7 @@
 const express =require('express');
 const app =express();
 const bodyparser =require('body-parser');
-app.set('port',process.env.PORT || 8000);
+app.set('port', process.env.PORT || 8080);
 var port =app.get('port');
 var jsonParser=bodyparser.json();
 const crypto =require('crypto');
@@ -85,6 +85,4 @@ app.get('/users',verifyToken, function(req,res){
           res.sendStatus(403).json('Authentication error');
         }
       }
-app.listen('port',function(){
-  console.log('server Runing  on port ' + port);
-})
+app.listen('8000')
